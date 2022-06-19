@@ -1,0 +1,17 @@
+
+name: Actions Workflow
+
+on: [push]
+
+jobs:
+  runs-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simple JS Actions
+        id: greeting
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: For Eldorbek
+      - name: Echo output
+        run: echo "{{ steeps.greeting.outputs.time }}"
+
