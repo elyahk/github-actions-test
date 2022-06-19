@@ -13,5 +13,5 @@ jobs:
         with:
           who-to-greet: For Eldorbek
       - name: Echo output
-        run: echo "{{ steeps.greeting.outputs.time }}"
+        run: echo "${{ steeps.greeting.outputs.time }}"
 
