@@ -14,6 +14,8 @@ jobs:
   runs-github-actions:
     runs-on: ubuntu-latest
     steps:
+      - name: Show client code
+        run: echo ${{ github.event.client_payload.env }}
       - name: List files
         run: |
           pwd
