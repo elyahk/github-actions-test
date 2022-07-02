@@ -19,7 +19,6 @@ jobs:
           echo ${{ github.event.client_payload.env }}
           echo ${{ github.event.client_payload.name }}
           echo ${{ github.event.client_payload.surname }}
-          echo ${{ github.event.info.name }}
       - name: List files
         run: |
           pwd

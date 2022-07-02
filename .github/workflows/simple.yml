@@ -6,23 +6,9 @@ jobs:
   run-shell-command:
     runs-on: ubuntu-latest
     steps:
-      - name:  echo a string
-        run: echo "Hello world"
+      - name: echo a string
+        run: echo "Show a string"
       - name: multiline script
         run: |
           node -v
           npm -v
-          echo "Hello world again"
-      - name: Python Commands
-        run: |
-          import platform
-          print(platform.processor())
-        shell: python
-  run-windows-commands:
-    runs-on: windows-latest
-    steps:
-      - name: Directory PowerShell
-        run: Get-Location
-      - name: Directory Bash
-        run: pwd
-
