@@ -1,44 +1,16 @@
 name: Actions Workflow
 
-on:
-  repository_dispatch:
-    types: [build]
-#  schedule:
-#    - cron: "0/5 * * * *"
-#    - cron: "0/6 * * * *"
-
-  pull_request:
-    types: [closed, assigned, opened, reopened]
+on: [push]
 
 jobs:
-  runs-github-actions:
+  run-github-actions:
     runs-on: ubuntu-latest
     steps:
-      - name: Show client code
-        run: |
-          echo ${{ github.event.client_payload.env }}
-          echo ${{ github.event.client_payload.name }}
-          echo ${{ github.event.client_payload.surname }}
-      - name: List files
+      - name: List Files
         run: |
           pwd
           ls -a
-          echo $GITHUB_SHA
-          echo $GITHUB_REPOSITORY
-          echo $GITHUB_WORKSPACE
-          echo "${{ github.token }}"
       - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: List files
-        run: |
-          pwd
-          ls -a
-      - name: Simple JS Actions
-        id: greeting
-        uses: actions/hello-world-javascript-action@v1
-        with:
-          who-to-greet: For Eldorbek
-      - name: Echo output
-        run: echo "${{ steps.greeting.outputs.time }}"
-
+        uses: actions/checkout@v1
+      - name: List Files After Checkout
+        run: ls -a
