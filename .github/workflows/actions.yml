@@ -22,7 +22,9 @@ jobs:
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
           echo "${{ github.token }}"
-          echo "${{ github.token }}"
+          echo "${{ github.event.client_payload.env }}"
+          echo "${{ github.event.client_payload.name }}"
+          echo "${{ github.event.client_payload.surname }}"
 #          git clone git@github:$GITHUB_REPOSITORY
 #          git checkout $GITHUB_SHA
       - name: Checkout
